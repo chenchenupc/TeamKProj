@@ -1,0 +1,60 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="adminSite.master.cs" Inherits="adminSite" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>会议室管理系统</title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .menu
+        {
+            text-align: left;
+        }
+        .style1
+        {
+            background-image: url('bootstrap-datetimepicker/tests/suites/formats.js');
+        }
+    </style>
+</head>
+<body>
+<script type="text/javascript" src = "//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="bootstrap-3.3.5-dist/js/bootstrap.min.js" type="text/javascript"></script>
+    <form id="Form2" runat="server">
+    <div class="page">
+        <div class="header">
+            <div class="title">
+                <h1> <img src="Images/logo2.png" style="height: 55px; width: 254px" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        会议室管理系统
+                </h1> 
+             </div>
+             <div class="loginDisplay">
+             <a id="HeadLoginStatus" runat="server" href="~/Default.aspx"><span class="style1">注销</span></a>
+             </div> 
+            <div class="clear hideSkiplink">
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/aroomstate.aspx" Text="会议室状态"/>     
+                        <asp:MenuItem NavigateUrl="~/bookreview.aspx" Text="会议室预约处理"/>
+                        <asp:MenuItem NavigateUrl="~/equipstate.aspx" Text="设备状态"/>
+                        <asp:MenuItem NavigateUrl="~/recordview.aspx" Text="设备修理记录" />
+                    </Items>
+                </asp:Menu>
+                
+            </div>
+        </div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"/>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="footer">
+        
+    </div>
+    </form>
+</body>
+</html>
